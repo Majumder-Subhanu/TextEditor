@@ -45,6 +45,7 @@ public class Main extends JFrame implements ActionListener {
         //JMenuItem closeFile = new JMenuItem("close");
         JMenuItem darkMode = new JMenuItem("Dark theme");
         JMenuItem lightMode = new JMenuItem("Light theme");
+        JMenuItem tabSize = new JMenuItem("Tab size");
         JMenuItem fontSize = new JMenuItem("Font size");
         JMenuItem font = new JMenuItem("Font");
         JMenuItem bold = new JMenuItem("Bold");
@@ -87,6 +88,7 @@ public class Main extends JFrame implements ActionListener {
         editFile.add(replaceText);
         mode.add(darkMode);
         mode.add(lightMode);
+        mode.add(tabSize);
         mode.add(font);
         mode.add(fontSize);
 
@@ -246,6 +248,15 @@ public class Main extends JFrame implements ActionListener {
                 } else
                 // Generate a new default window to show a cancellation message
                     JOptionPane.showMessageDialog(frame, "the user cancelled the operation");
+                break;
+
+            case "Tab size":
+                String [] tabValues = {"10", "12", "14", "16", "18", "20"};
+                String tabSize = (String) JOptionPane.showInputDialog(null, "Select Font Size", "Font Size Selector", JOptionPane.QUESTION_MESSAGE, null, tabValues, tabValues[0]);
+                if (tabSize != null) {
+                    int defaultTabSize = Integer.parseInt(tabSize);
+                    editor.setTabSize(defaultTabSize);
+                }
                 break;
 
                 // Create new file option
