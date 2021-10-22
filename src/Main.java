@@ -12,7 +12,6 @@ public class Main extends JFrame implements ActionListener {
     private final JTextArea editor; // Declare text area
     private final JFrame frame; // Declare new frame
     private int c = 0; // Declare integer variable and set it to 0
-    private Font defaultFont;
     private int defaultFontSize;
     private String font;
 
@@ -71,6 +70,7 @@ public class Main extends JFrame implements ActionListener {
         bold.addActionListener(this);
         italic.addActionListener(this);
         normal.addActionListener(this);
+        tabSize.addActionListener(this);
 
         // Add the sub menu items to the parent menu item
         menuItem.add(newFile);
@@ -117,6 +117,7 @@ public class Main extends JFrame implements ActionListener {
         String s = e.getActionCommand(); // Gets the value of the menu bar items through anonymous click listener
 
         // Switch case statement to assign separate tasks to the different menubar items
+        Font defaultFont;
         switch (s) {
 
                 // Cut action
@@ -251,11 +252,13 @@ public class Main extends JFrame implements ActionListener {
                 break;
 
             case "Tab size":
-                String [] tabValues = {"10", "12", "14", "16", "18", "20"};
-                String tabSize = (String) JOptionPane.showInputDialog(null, "Select Font Size", "Font Size Selector", JOptionPane.QUESTION_MESSAGE, null, tabValues, tabValues[0]);
+                String [] tabValues = {"2", "3", "4", "5", "6", "7", "8"};
+                String tabSize = (String) JOptionPane.showInputDialog(null, "Select Tab Size", "Tab Size Selector", JOptionPane.QUESTION_MESSAGE, null, tabValues, tabValues[0]);
                 if (tabSize != null) {
                     int defaultTabSize = Integer.parseInt(tabSize);
                     editor.setTabSize(defaultTabSize);
+                } else {
+                    JOptionPane.showMessageDialog(frame, "the user cancelled the operation");
                 }
                 break;
 
