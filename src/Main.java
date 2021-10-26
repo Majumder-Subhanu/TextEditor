@@ -12,7 +12,7 @@ public class Main extends JFrame implements ActionListener {
     private final JTextArea editor; // Declare text area
     private final JFrame frame; // Declare new frame
     private int c = 0; // Declare integer variable and set it to 0
-    private int defaultFontSize;
+    private int defaultFontSize = 12;
     private String font;
 
     // Declaring a constructor to initialize all the data members
@@ -147,6 +147,7 @@ public class Main extends JFrame implements ActionListener {
                 }
                 break;
 
+            // Replace text Option
             case "replace":
                 JTextField old_word = new JTextField();
                 JTextField new_word = new JTextField();
