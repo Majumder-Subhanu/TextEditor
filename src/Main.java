@@ -282,7 +282,7 @@ public class Main extends JFrame implements ActionListener {
                 break;
 
             case "Font size":
-                String [] fontValues = {"10", "12", "14", "16", "18", "20"};
+                String [] fontValues = {"10", "12", "14", "16", "18", "20", "22", "24", "26", "28", "30", "32", "34"};
                 String fontSize = (String) JOptionPane.showInputDialog(null, "Select Font Size", "Font Size Selector", JOptionPane.QUESTION_MESSAGE, null, fontValues, fontValues[0]);
                 if (fontSize != null) {
                     defaultFontSize = Integer.parseInt(fontSize);
