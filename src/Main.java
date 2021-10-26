@@ -270,9 +270,9 @@ public class Main extends JFrame implements ActionListener {
                 break;
 
             case "Dark theme":
-                editor.setCaretColor(Color.LIGHT_GRAY);
-                editor.setForeground(Color.WHITE);
-                editor.setBackground(Color.BLACK);
+                editor.setCaretColor(Color.BLUE);
+                editor.setForeground(Color.LIGHT_GRAY);
+                editor.setBackground(Color.DARK_GRAY);
                 break;
 
             case "Light theme":
